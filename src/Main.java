@@ -3,12 +3,8 @@ import java.util.Scanner;
 import java.util.Arrays;
 import java.io.IOException;
 
-
-
-
-
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 
 
         Roman roman = new Roman();
@@ -30,8 +26,7 @@ public class Main {
             try{
                 throw new IOException();
             }catch (IOException e){
-                System.out.println("Ошибка ввода!!!");
-                System.exit(1);
+                throw new IOException();
             }
         }
 
@@ -51,8 +46,7 @@ public class Main {
             try{
                 throw new IOException();
             }catch (IOException e){
-                System.out.println("Ошибка ввода!!!");
-                System.exit(1);
+                throw new IOException();
             }
         }
 
@@ -80,16 +74,14 @@ public class Main {
             try{
                 throw new IOException();
             }catch (IOException e){
-                System.out.println("Ошибка ввода 2!!!");
-                System.exit(1);
+                throw new IOException();
             }
         }
         if (number2.matches(regex)){
             try{
                 throw new IOException();
             }catch (IOException e){
-                System.out.println("Ошибка ввода 3!!!");
-                System.exit(1);
+                throw new IOException();
             }
         }
 
@@ -104,8 +96,7 @@ public class Main {
                     try{
                         throw new IOException();
                     }catch (IOException e){
-                        System.out.println("Вы ввели числа больше 10!!!");
-                        System.exit(1);
+                        throw new IOException();
                     }
                 }
                 resultat = switch (operator) {
@@ -149,22 +140,21 @@ public class Main {
                 try{
                     throw new IOException();
                 }catch (IOException e){
-                    System.out.println("Ошибка !!!");
+                    throw new IOException();
                 }
 
             }} else if (number2.contains("I") || number2.contains("V") || number2.contains("X") || number2.contains("M")) {
             try{
                 throw new IOException();
             }catch (IOException e){
-                System.out.println("Ошибка 2 !!!");
+                throw new IOException();
             }
         }else{
             if (Integer.parseInt(number1) > 10 || Integer.parseInt(number2) > 10){
                 try{
                     throw new IOException();
                 }catch (IOException e){
-                    System.out.println("Вы ввели числа больше 10!!!");
-                    System.exit(1);
+                    throw new IOException();
                 }
             }
             switch (operator){
@@ -263,4 +253,3 @@ public class Main {
         }
         return s_hundreds;
     }
-}
