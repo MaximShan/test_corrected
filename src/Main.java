@@ -65,8 +65,39 @@ public class Main {
         String[] newArr2 = Arrays.copyOfRange(arr,index + 1, arr.length);
 
 
+
         String number1 = String.join("", newArr1);
         String number2 = String.join("", newArr2);
+
+        int count2 = 0;
+        for (String s : newArr1) {
+            if (Objects.equals(s, "I")) {
+                count2++;
+            }
+        }
+
+        if(count2 > 3){
+            try{
+                throw new IOException();
+            }catch (IOException e){
+                throw new IOException();
+            }
+        }
+
+        int count3 = 0;
+        for (String s : newArr2) {
+            if (Objects.equals(s, "I")) {
+                count3++;
+            }
+        }
+
+        if(count3 > 3){
+            try{
+                throw new IOException();
+            }catch (IOException e){
+                throw new IOException();
+            }
+        }
 
 
         var regex = "A-Za-zА-Яа-я&&[^IVX]+";
@@ -84,6 +115,10 @@ public class Main {
                 throw new IOException();
             }
         }
+
+
+
+
 
         if (number1.contains("I") || number1.contains("V") || number1.contains("X")) {
             if (number2.contains("I") || number2.contains("V") || number2.contains("X")){
@@ -179,21 +214,23 @@ public class Main {
         }
     }
 
+
+
     public static class Roman {
 
-            public int getArabian(char roman){
-                if('I' == roman) return 1;
-                else if('V' == roman) return 5;
-                else if('X' == roman) return 10;
-                else if('L' == roman) return 50;
-                else if('C' == roman) return 100;
-                else if('D' == roman) return 500;
-                else if('M' == roman) return 1000;
-                return 0;
+        public int getArabian(char roman){
+            if('I' == roman) return 1;
+            else if('V' == roman) return 5;
+            else if('X' == roman) return 10;
+            else if('L' == roman) return 50;
+            else if('C' == roman) return 100;
+            else if('D' == roman) return 500;
+            else if('M' == roman) return 1000;
+            return 0;
 
-            }
+        }
 
-            public int romanToInt(String s) {
+        public int romanToInt(String s) {
 
 
 
@@ -215,7 +252,7 @@ public class Main {
             return result;
 
         }
-        }
+    }
     public static String Units(int units) {
         String s_units = switch (units) {
             case 1 -> "I";
@@ -253,3 +290,4 @@ public class Main {
         }
         return s_hundreds;
     }
+}
